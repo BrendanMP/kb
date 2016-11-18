@@ -24,33 +24,32 @@ gulp.task('sass', () => {
         }).on('error', sass.logError))
         .pipe(production(cleanCSS()))
         .pipe(rename('app.css'))
-        .pipe(gulp.dest('./dist/css/'))
+        .pipe(gulp.dest('./css/'))
         .pipe(browserSync.stream());
 });
 
 gulp.task('scripts', () => {
     return gulp.src(['./src/js/*.js'])
 
-        .pipe(gulp.dest('dist/js/'));
+        .pipe(gulp.dest('js/'));
 });
 
 gulp.task('html', () => {
     return gulp.src(['./src/**/*.html'])
-        .pipe(gulp.dest('dist/'));
+        .pipe(gulp.dest('./'));
 });
 
 gulp.task('serve', ['sass','scripts','html'], () => {
     browserSync.init({
         server: {
-            baseDir: "./dist/"
+            baseDir: "./"
         }
     });
     gulp.watch('./src/scss/*.scss', ['sass']);
     gulp.watch('./src/js/*.js', ['scripts']);
     gulp.watch('./src/**/*.html', ['html']);
-    gulp.watch('./dist/css/*.css').on('change', browserSync.reload);
+    gulp.watch('./css/*.css').on('change', browserSync.reload);
 });
-
 
 gulp.task('default', ['serve']);
 

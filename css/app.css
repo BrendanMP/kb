@@ -82,7 +82,7 @@ section {
   padding: 0.5em;
   background: #000;
   color: #fff;
-  font-size: 0.5rem; }
+  font-size: .75rem; }
 
 @keyframes blink {
   0% {

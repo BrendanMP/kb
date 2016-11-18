@@ -49,6 +49,7 @@ function getWinner() {
         } else if (player.one.score > player.two.score) {
             console.log('p1 - wins the game')
         }
+
     }
 }
 

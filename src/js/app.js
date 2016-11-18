@@ -131,6 +131,7 @@ function startGame() {
 
 // Ready the DOM for BATTLE.
 $(document).ready(function () {
+    console.log('Hit letter in either word progress, no visual indicators yet.')
     // Start game.
     startGame();
 });

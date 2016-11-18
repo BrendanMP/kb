@@ -8,4 +8,4 @@ Keyboard Battle (kb) is a two player party game played on the same keyboard. The
   * The game is over when a player completes 10 words.
 
 ### Work in Progress... 
-#### [Playable Here](http://https://brendanmp.github.io/kb/)
+[Playable Here](http://https://brendanmp.github.io/kb/)

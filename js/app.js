@@ -1,74 +1,36 @@
 var words = [
-        'Dooickeys',
-        'Pseghting',
-        'Moqnuqeek',
-        'Poncicles',
-        'Bamanapan',
-        'Groindogs',
-        'Lorfickle',
-        'Smoomcake',
-        'Limgistic',
-        'Mostaming',
-        'Dreamdump',
-        'Miltmirks',
-        'Dangmurse',
-        'Dosmingle'
+        'dog',
+        'cat',
+        'fox',
+        'bug',
+        'pup',
+        'emu'
     ],
-    totalWords = words.length,
+    wordTotal = words.length,
     playedWords = [],
     player = {
         'one': {
             'word': [],
             'progress': 0,
-            'score': 0,
-            'winner': false
+            'score': 0
         },
         'two': {
             'word': [],
             'progress': 0,
-            'score': 0,
-            'winner': false
+            'score': 0
         }
     };
 
-function watchKeys() {
-    $('body').keypress(function(input) {
-        battle(input);
-    });
-}
 
-function keepScore () {
+function updateScores() {
     $('#js-p1-score').text(player.one.score);
     $('#js-p2-score').text(player.two.score);
 }
 
-function getWinner() {
-    if (playedWords.length === totalWords) {
-        if (player.one.score > player.two.score) {
-            console.log('p1 - wins the game')
-        } else if (player.one.score > player.two.score) {
-            console.log('p1 - wins the game')
-        }
-    }
-}
-
-function shuffle(array) {
-    var m = array.length, t, i;
-    while (m) {
-        i = Math.floor(Math.random() * m--);
-        t = array[m];
-        array[m] = array[i];
-        array[i] = t;
-    }
-    return array;
-}
-
 function addWords() {
     player.one.word = words[0].split('');
-    playedWords.push(words[0]);
     player.two.word = words[1].split('');
-    playedWords.push(words[1]);
-    words.splice(0, 2);
+    playedWords.push(words[0], words[1]);
 
     $('#js-p1-wordlist').prepend(
         '<li><h2>' + player.one.word.join('') + '</h2></li>'
@@ -78,63 +40,78 @@ function addWords() {
     );
 }
 
-function battle(input) {
+function doBattle(input) {
+    // P1 or P2 advances to next letter next after matched input.
+    // If P1 and P2 share progress & active character they both advance.
+    // If a player has a lead the character is given to the opposing player.
     if (input.key === player.one.word[0] && input.key === player.two.word[0]) {
-        if (player.one.progress === player.two.progress){
+        if (player.one.progress === player.two.progress) {
             player.one.progress = player.one.progress + 1;
             player.two.progress = player.two.progress + 1;
             player.one.word.shift();
             player.two.word.shift();
-            console.log('p1 & p2 - matched (both advance)', player.one.word, player.two.word);
+            console.log('P1 & P2 - matched (both advance)', player.one.word, player.two.word);
         } else if (player.one.progress < player.two.progress) {
             player.one.progress = player.one.progress + 1;
             player.one.word.shift();
-            console.log('p1 & p2 - matched (player 1 advances)', player.one.word, player.two.word);
+            console.log('P1 & P2 - matched (player 1 advances)', player.one.word, player.two.word);
         } else {
             player.two.progress = player.two.progress + 1;
             player.two.word.shift();
-            console.log('p1 & p2 - matched (player 2 advances)', player.one.word, player.two.word);
+            console.log('P1 & P2 - matched (player 2 advances)', player.one.word, player.two.word);
         }
-    } else if (input.key === player.one.word[0]){
+    } else if (input.key === player.one.word[0]) {
         player.one.progress = player.one.progress + 1;
         player.one.word.shift();
-        console.log('p1 - matched', player.one.word)
-    } else if (input.key === player.two.word[0]){
+        console.log('P1 - matched', player.one.word)
+    } else if (input.key === player.two.word[0]) {
         player.two.progress = player.two.progress + 1;
         player.two.word.shift();
-        console.log('p2 - matched', player.two.word)
+        console.log('P2 - matched', player.two.word)
     }
-    getRoundWinner();
+    roundWinner();
 }
 
-function getRoundWinner() {
+function roundWinner() {
     if (player.one.word.length === 0) {
+        console.log('P1 wins round');
+        words.splice(0, 2);
         player.one.score = player.one.score + 1;
         startRound();
-        console.log('p1 - wins round');
     } else if (player.two.word.length === 0) {
+        console.log('P2 wins round');
+        words.splice(0, 2);
         player.two.score = player.two.score + 1;
         startRound();
-        console.log('p2 - wins round');
-    } else if (totalWords === playedWords.length) {
-        console.log('game over')
     }
-    keepScore();
+    updateScores();
 }
 
 function startRound() {
-    shuffle(words);
-    addWords();
-    watchKeys();
-    getWinner();
+    if (playedWords.length < wordTotal) {
+        addWords();
+        $('body').keypress(function (input) {
+            doBattle(input);
+        });
+    } else {
+        gameOver();
+    }
 }
 
-function init() {
-    keepScore();
+function gameOver() {
+    console.log('game over');
+    if (player.one.score > player.two.score) {
+        console.log('P1 Wins Game')
+    } else if ( player.one.score < player.two.score ) {
+        console.log('P2 Wins Game')
+    }
+}
+
+function startGame() {
+    updateScores();
     startRound();
 }
 
-$(document).ready(function() {
-    init();
+$(document).ready(function () {
+    startGame();
 });
-

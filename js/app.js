@@ -86,23 +86,17 @@ function roundWinner() {
     if (player.one.word.length === 0) {
         player.one.score = player.one.score + 1;
         console.log('P1 - Wins Round');
-        words.splice(0, 2);
-        if (words.length === 0) {
-            gameOver();
-        } else {
-            startRound();
-        }
     } else if (player.two.word.length === 0) {
         player.two.score = player.two.score + 1;
         console.log('P2 - Wins Round');
-        words.splice(0, 2);
-        if (words.length === 0) {
-            gameOver();
-        } else {
-            startRound();
-        }
     }
     updateScores();
+    if (playedWords.length > wordTotal) {
+        startRound();
+    } else {
+        words.splice(0, 2);
+        gameOver();
+    }
 }
 
 // Start a round.
@@ -119,12 +113,18 @@ function gameOver() {
     } else if (player.one.score < player.two.score) {
         console.log('P2 Wins Game')
     }
+    startGame();
 }
 
 // Start the game.
 function startGame() {
+    if ( words.length === 0) {
+        words = playedWords;
+    }
     // Init Scores
     updateScores();
+    // If restarting game.
+
     // Start Rounds
     startRound();
 }

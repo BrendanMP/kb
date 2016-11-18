@@ -14,6 +14,8 @@ var words = [
         'Dangmurse',
         'Dosmingle'
     ],
+    totalWords = words.length,
+    playedWords = [],
     player = {
         'one': {
             'word': [],
@@ -41,8 +43,12 @@ function keepScore () {
 }
 
 function getWinner() {
-    if (words.length === 0) {
-        console.log('game over');
+    if (playedWords.length === totalWords) {
+        if (player.one.score > player.two.score) {
+            console.log('p1 - wins the game')
+        } else if (player.one.score > player.two.score) {
+            console.log('p1 - wins the game')
+        }
     }
 }
 
@@ -59,7 +65,9 @@ function shuffle(array) {
 
 function addWords() {
     player.one.word = words[0].split('');
+    playedWords.push(words[0]);
     player.two.word = words[1].split('');
+    playedWords.push(words[1]);
     words.splice(0, 2);
 
     $('#js-p1-wordlist').prepend(
@@ -108,6 +116,8 @@ function getRoundWinner() {
         player.two.score = player.two.score + 1;
         startRound();
         console.log('p2 - wins round');
+    } else if (totalWords === playedWords.length) {
+        console.log('game over')
     }
     keepScore();
 }
@@ -116,12 +126,12 @@ function startRound() {
     shuffle(words);
     addWords();
     watchKeys();
+    getWinner();
 }
 
 function init() {
     keepScore();
     startRound();
-    getWinner();
 }
 
 $(document).ready(function() {

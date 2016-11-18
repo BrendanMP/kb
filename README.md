@@ -6,3 +6,5 @@ Keyboard Battle (kb) is a two player party game played on the same keyboard. The
   * If the same letter is active and share the same index value both players advance on input.
   * If the same letter is active and a player has more matched characters than the other, the player with fewer matched characters receives that letter.
   * The game is over when a player completes 10 words.
+
+### Work in Progress... [Playable Here](http://https://brendanmp.github.io/kb/)

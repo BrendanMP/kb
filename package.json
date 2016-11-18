@@ -1,0 +1,37 @@
+{
+  "name": "kb",
+  "version": "1.0.0",
+  "description": "Keyboard Battle!!!",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrendanMP/kb.git"
+  },
+  "keywords": [
+    "Party",
+    "Game",
+    "JS",
+    "SCSS",
+    "GULP"
+  ],
+  "author": "BrendanMP",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BrendanMP/kb/issues"
+  },
+  "homepage": "https://github.com/BrendanMP/kb#readme",
+  "devDependencies": {
+    "bourbon": "^4.2.7",
+    "browser-sync": "^2.17.5",
+    "gulp": "^3.9.1",
+    "gulp-changed": "^1.3.2",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-environments": "^0.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "materialize-css": "^0.97.8"
+  }
+}

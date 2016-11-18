@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: "Space Mono", monospace; }
+
+h5 {
+  font-family: "Roboto Condensed", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif; }
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: row wrap; }
+
+header {
+  background: tomato;
+  color: #fff;
+  width: 100%;
+  font-weight: 600;
+  font-size: 5vw;
+  line-height: 4rem;
+  padding: 0 2rem;
+  text-align: center; }
+
+section {
+  flex: 1 1 50%;
+  padding: 3rem;
+  color: #fff; }
+  section h5 {
+    font-size: 2vw;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid white;
+    padding-bottom: 1rem;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: flex;
+    align-items: baseline; }
+    section h5 span {
+      flex: 1;
+      text-align: right;
+      font-family: "Space Mono", monospace; }
+      section h5 span span {
+        display: inline-block;
+        text-align: right;
+        width: 1em; }
+  section.left {
+    background: deepskyblue;
+    color: #fff;
+    text-align: left; }
+  section.right {
+    color: rgba(0, 0, 0, 0.8);
+    background: navajowhite; }
+    section.right h5 {
+      border-color: rgba(0, 0, 0, 0.8); }
+
+.word-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; }
+  .word-list li h2 {
+    font-size: 5.5vw;
+    margin: 1rem 0;
+    color: rgba(0, 0, 0, 0.1); }
+    .word-list li h2.lost {
+      color: rgba(0, 0, 0, 0.6); }
+    .word-list li h2.won {
+      color: #fff; }
+  .word-list li span.active {
+    color: rgba(0, 0, 0, 0.5);
+    animation: blink 600ms infinite; }
+
+#js-input {
+  display: none; }
+
+@keyframes blink {
+  0% {
+    color: rgba(255, 255, 255, 0.65); }
+  50% {
+    color: rgba(255, 255, 255, 0.65); }
+  51% {
+    color: rgba(0, 0, 0, 0.1); }
+  100% {
+    color: rgba(0, 0, 0, 0.1); } }

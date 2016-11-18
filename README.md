@@ -7,8 +7,16 @@ Keyboard Battle (kb) is a two player party game played on the same keyboard. The
   * If the same letter is active and a player has more matched characters than the other, the player with fewer matched characters receives that letter.
   * The game is over when a player completes 10 words.
 
-### Work in Progress... 
-[Playable Here](https://brendanmp.github.io/kb/)
+---
 
 ### Bugs & Debugging
 Most of the logic is being tracked with console logs. I'm currently working on a bug that seems to be calling the gameover function multiple times. 
+
+---
+
+### Work in Progress... 
+["Playable Here"](https://brendanmp.github.io/kb/)
+
+---
+
+

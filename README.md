@@ -11,4 +11,4 @@ Keyboard Battle (kb) is a two player party game played on the same keyboard. The
 [Playable Here](https://brendanmp.github.io/kb/)
 
 ### Bugs & Debugging
-This is a work in progress, most of the logic is being tracked with console logs. I'm currently working on a bug that seems to be calling the gameover function multiple times. 
+Most of the logic is being tracked with console logs. I'm currently working on a bug that seems to be calling the gameover function multiple times. 

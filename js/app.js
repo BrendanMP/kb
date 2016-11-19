@@ -1,18 +1,18 @@
 var words = [
         'Dooickeys',
-        'Pseghting',
-        'Moqnuqeek',
-        'Poncicles',
-        'Bamanapan',
-        'Groindogs',
-        'Lorfickle',
-        'Smoomcake',
-        'Limgistic',
-        'Mostaming',
-        'Dreamdump',
-        'Miltmirks',
-        'Dangmurse',
-        'Dosmingle'
+        'Pseghting'
+        //'Moqnuqeek',
+        //'Poncicles',
+        //'Bamanapan',
+        //'Groindogs',
+        //'Lorfickle',
+        //'Smoomcake',
+        //'Limgistic',
+        //'Mostaming',
+        //'Dreamdump',
+        //'Miltmirks',
+        //'Dangmurse',
+        //'Dosmingle'
     ],
     wordTotal = words.length,
     playedWords = [],
@@ -132,9 +132,11 @@ function startRound() {
 function gameOver() {
     console.log('Game Over!');
     if (player.one.score > player.two.score) {
-        console.log('P1 Wins Game')
+        console.log('P1 Wins Game');
+        $('#console').text('Player One Wins');
     } else if (player.one.score < player.two.score) {
-        console.log('P2 Wins Game')
+        console.log('P2 Wins Game');
+        $('#console').text('Player Two Wins');
     }
     if ( words.length === 0) {
         words = playedWords;

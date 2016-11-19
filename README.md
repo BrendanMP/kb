@@ -13,4 +13,4 @@ Keyboard Battle (kb) is a two player party game played on the same keyboard. The
 ### To Do
   * Add styling to the active and input characters.
   * Instruction Screen
-  * Improve UI (Launch modal, etc.)
+  * Improve UI (Launch screen, etc.)

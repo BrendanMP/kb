@@ -82,7 +82,7 @@ section {
 #js-input {
   display: none; }
 
-#console {
+.messages {
   display: flex;
   align-items: center;
   justify-content: center;

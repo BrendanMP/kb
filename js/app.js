@@ -2,17 +2,17 @@ var words = [
         'Dooickeys',
         'Pseghting',
         'Moqnuqeek',
-        'Poncicles',
-        'Bamanapan',
-        'Groindogs',
-        'Lorfickle',
-        'Smoomcake',
-        'Limgistic',
-        'Mostaming',
-        'Dreamdump',
-        'Miltmirks',
-        'Dangmurse',
-        'Domingles'
+        'Poncicles'
+        //'Bamanapan',
+        //'Groindogs',
+        //'Lorfickle',
+        //'Smoomcake',
+        //'Limgistic',
+        //'Mostaming',
+        //'Dreamdump',
+        //'Miltmirks',
+        //'Dangmurse',
+        //'Domingles'
     ],
     wordLength = words[0].length,
     wordTotal = words.length,
@@ -149,9 +149,6 @@ function startRound() {
     player.two.progress = 0;
     roundCounter++;
 
-    // Remove active letter
-
-
     // Check progress.
     if (words.length > 0) {
         addWords();
@@ -174,8 +171,9 @@ function gameOver() {
         $('#console').text('Player Two Wins');
     }
 
-    // Reset words & roundcounter.
+    // Reset words, playedWords & roundcounter.
     words = playedWords;
+    playedWords = [];
     roundCounter = 0;
 
     // Start new game.

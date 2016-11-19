@@ -61,7 +61,7 @@ section {
   padding: 0;
   margin: 0; }
   .word-list li {
-    animation: enter-title 200ms ease-in-out forwards; }
+    animation: enter-title 300ms ease-in-out forwards; }
     .word-list li h2 {
       line-height: 1.5;
       font-size: 5.5vw;

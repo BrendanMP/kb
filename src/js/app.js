@@ -1,7 +1,7 @@
 var words = [
         'Doxickeys',
         'Pseghting',
-        'Moqnuqeek',
+        'Moqnuqeck',
         'Poncicles',
         'Bamanapan',
         'Groindogs',

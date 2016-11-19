@@ -1,10 +1,18 @@
 var words = [
-        'dog',
-        'cat',
-        'fox',
-        'bug'
-        //'pup',
-        //'emu'
+        'Dooickeys',
+        'Pseghting',
+        'Moqnuqeek',
+        'Poncicles',
+        'Bamanapan',
+        'Groindogs',
+        'Lorfickle',
+        'Smoomcake',
+        'Limgistic',
+        'Mostaming',
+        'Dreamdump',
+        'Miltmirks',
+        'Dangmurse',
+        'Dosmingle'
     ],
     wordTotal = words.length,
     playedWords = [],
@@ -86,44 +94,51 @@ function roundWinner() {
     if (player.one.word.length === 0) {
         player.one.score = player.one.score + 1;
         console.log('P1 - Wins Round');
+        startRound();
     } else if (player.two.word.length === 0) {
         player.two.score = player.two.score + 1;
         console.log('P2 - Wins Round');
+        startRound();
     }
     updateScores();
-    if (playedWords.length > wordTotal) {
-        startRound();
-    } else {
-        words.splice(0, 2);
-        gameOver();
-    }
 }
 
 // Start a round.
 function startRound() {
-    addWords();
-    watchKeys();
+    if (words.length > 0) {
+        addWords();
+        watchKeys();
+        words.splice(0,2);
+    } else if (words.length === 0){
+        gameOver();
+    }
 }
 
 // Game over.
 function gameOver() {
-    console.log('game over');
+    console.log('Game Over!');
     if (player.one.score > player.two.score) {
         console.log('P1 Wins Game')
     } else if (player.one.score < player.two.score) {
         console.log('P2 Wins Game')
+    }
+    if ( words.length === 0) {
+        words = playedWords;
     }
     startGame();
 }
 
 // Start the game.
 function startGame() {
-    if ( words.length === 0) {
-        words = playedWords;
-    }
+
     // Init Scores
+    player.one.score = 0;
+    player.two.score = 0;
     updateScores();
-    // If restarting game.
+
+    // Init Word Lists
+    $('#js-p1-wordlist').html('');
+    $('#js-p2-wordlist').html('');
 
     // Start Rounds
     startRound();

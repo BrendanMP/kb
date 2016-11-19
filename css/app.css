@@ -60,19 +60,21 @@ section {
   list-style-type: none;
   padding: 0;
   margin: 0; }
-  .word-list li h2 {
-    font-size: 5.5vw;
-    margin: 1rem 0;
-    color: rgba(0, 0, 0, 0.1); }
-    .word-list li h2.lost {
-      color: rgba(0, 0, 0, 0.6); }
-    .word-list li h2.won {
-      color: #fff; }
-  .word-list li span.input {
-    color: rgba(0, 0, 0, 0.5); }
-  .word-list li:first-of-type span.active {
-    color: rgba(0, 0, 0, 0.5);
-    animation: blink 600ms infinite; }
+  .word-list li {
+    animation: enter-title 200ms ease-in-out forwards; }
+    .word-list li h2 {
+      font-size: 5.5vw;
+      margin: 1rem 0;
+      color: rgba(0, 0, 0, 0.1); }
+    .word-list li span {
+      display: inline-block; }
+    .word-list li span.input {
+      color: rgba(0, 0, 0, 0.4); }
+    .word-list li:first-of-type span.active {
+      color: rgba(0, 0, 0, 0.5);
+      animation: blink 600ms infinite; }
+    .word-list li:first-of-type span.input {
+      color: rgba(0, 0, 0, 0.5); }
 
 #js-input {
   display: none; }
@@ -98,3 +100,14 @@ section {
     color: rgba(0, 0, 0, 0.1); }
   100% {
     color: rgba(0, 0, 0, 0.1); } }
+
+@keyframes enter-title {
+  0% {
+    opacity: 0;
+    transform: translateY(-3rem); }
+  50% {
+    opacity: 1;
+    transform: translateY(0.5rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }

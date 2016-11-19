@@ -98,7 +98,6 @@ function doBattle(input) {
             player.two.word.shift();
             $('#p1-r' + roundCounter + '-c' + player.one.progress).addClass('input');
             $('#p2-r' + roundCounter + '-c' + player.two.progress).addClass('input');
-
             console.log('P1 & P2 - Matched (Both Advance)', player.one.word, player.two.word);
         } else if (player.one.progress < player.two.progress) {
             player.one.progress = player.one.progress + 1;

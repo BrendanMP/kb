@@ -12,7 +12,7 @@ var words = [
         'Dreamdump',
         'Miltmirks',
         'Dangmurse',
-        'Domingles'
+        'Momingles'
     ],
     wordLength = words[0].length,
     wordTotal = words.length,
@@ -165,10 +165,10 @@ function gameOver() {
     // Check for winner.
     if (player.one.score > player.two.score) {
         console.log('P1 Wins Game');
-        $('#console').text('Player One Wins');
+        $('#console').text('Player One Wins the Game - P1: ' + player.one.score + ' P2: ' + player.two.score);
     } else if (player.one.score < player.two.score) {
         console.log('P2 Wins Game');
-        $('#console').text('Player Two Wins');
+        $('#console').text('Player Two Wins the Game - P1: ' + player.one.score + ' P2: ' + player.two.score);
     }
 
     // Reset words, playedWords & roundcounter.

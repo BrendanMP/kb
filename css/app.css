@@ -10,7 +10,7 @@ h5 {
   font-family: "Roboto Condensed", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif; }
 
 main {
-  min-height: calc(100vh - 3rem);
+  min-height: calc(100vh - 2rem);
   display: flex;
   flex-flow: row wrap; }
 
@@ -82,7 +82,7 @@ section {
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 3rem;
+  min-height: 2rem;
   flex-grow: 0;
   padding: 0.5em;
   background: #000;

@@ -10,7 +10,7 @@ h5 {
   font-family: "Roboto Condensed", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif; }
 
 main {
-  min-height: 100vh;
+  min-height: calc(100vh - 3rem);
   display: flex;
   flex-flow: row wrap; }
 
@@ -71,14 +71,19 @@ section {
   .word-list li span.active {
     color: rgba(0, 0, 0, 0.5);
     animation: blink 600ms infinite; }
+  .word-list li span.input {
+    color: #000; }
 
 #js-input {
   display: none; }
 
 #console {
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 3rem;
+  flex-grow: 0;
   padding: 0.5em;
   background: #000;
   color: #fff;

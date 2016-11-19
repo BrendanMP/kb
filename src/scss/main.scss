@@ -18,7 +18,7 @@ h5 {
 }
 
 main {
-  min-height: 100vh;
+  min-height: calc(100vh - 3rem);
   display: flex;
   flex-flow: row wrap;
 }
@@ -93,6 +93,9 @@ section {
       color: rgba(black, 0.5);
       animation: blink 600ms infinite;
     }
+    span.input {
+      color: #000;
+    }
 
   }
 }
@@ -102,14 +105,16 @@ section {
 }
 
 #console {
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:100%;
+  min-height: 3rem;
+  flex-grow: 0;
   padding: 0.5em;
   background: #000;
   color: #fff;
   font-size: .75rem;
-
 }
 
 @keyframes blink {

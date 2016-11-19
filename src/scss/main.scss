@@ -94,11 +94,23 @@ section {
     }
 
     &:first-of-type {
+      span {
+        opacity: 0;
+        animation: enter-letters 100ms 200ms ease-in-out forwards;
+        @for $i from 0 to 10 {
+          &:nth-child(#{$i}) {
+            animation-delay: $i * 50ms + 200ms;
+          }
+        }
+      }
       span.active {
+        opacity: 1;
         color: rgba(black, 0.1);
-        animation: blink 600ms infinite;
+        animation: blink 1000ms infinite;
       }
       span.input {
+        opacity: 1;
+        animation: matched-character 200ms ease-in forwards;
         color: rgba(black,0.5);
         box-shadow: inset 0 -0.4vw 0 rgba(white, 0.0);
       }
@@ -145,11 +157,11 @@ section {
 @keyframes enter-title {
   0% {
     opacity: 0;
-    transform: translateY(-3rem);
+    transform: translateY(-4rem);
   }
   50% {
     opacity: 1;
-    transform: translateY(0.5rem);
+    transform: translateY(1rem);
   }
 
   100% {
@@ -158,4 +170,13 @@ section {
   }
 }
 
-
+@keyframes enter-letters {
+  0% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+}

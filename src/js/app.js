@@ -104,11 +104,11 @@ function doBattle(input) {
             player.one.word.shift();
             $('#p1-r' + roundCounter + '-c' + player.one.progress).addClass('input');
             console.log('P1 & P2 - Matched (Player 1 Advances)', player.one.word, player.two.word);
-        } else {
+        } else if (player.one.progress > player.two.progress){
             player.two.progress = player.two.progress + 1;
             player.two.word.shift();
             $('#p2-r' + roundCounter + '-c' + player.two.progress).addClass('input');
-            console.log('P1 & P2 - Matched (Player 2 Advances)', player.one.word, player.two.word);
+            console.log('P1 & P2 - Matched (Player 2 Advances)', player.two.word, player.two.word);
         }
     } else if (input.key === player.one.word[0]) {
         player.one.progress = player.one.progress + 1;

@@ -12,7 +12,7 @@ var words = [
         'Dreamdump',
         'Miltmirks',
         'Dangmurse',
-        'Dosmingle'
+        'Domingles'
     ],
     wordLength = words[0].length,
     wordTotal = words.length,
@@ -82,9 +82,6 @@ function displayWords() {
     );
 }
 
-function displayMatch() {
-}
-
 // Determine who advances.
 function doBattle(input) {
     // P1 or P2 advances to next letter next after matched input.
@@ -104,7 +101,7 @@ function doBattle(input) {
             player.one.word.shift();
             $('#p1-r' + roundCounter + '-c' + player.one.progress).addClass('input');
             console.log('P1 & P2 - Matched (Player 1 Advances)', player.one.word, player.two.word);
-        } else if (player.one.progress > player.two.progress){
+        } else if (player.two.progress < player.one.progress){
             player.two.progress = player.two.progress + 1;
             player.two.word.shift();
             $('#p2-r' + roundCounter + '-c' + player.two.progress).addClass('input');
@@ -126,7 +123,12 @@ function doBattle(input) {
 
 // Determine round winner & update scores.
 function roundWinner() {
-    if (player.one.word.length === 0) {
+    if (player.one.word.length === 0 && player.two.word.length === 0){
+        player.one.score = player.one.score + 1;
+        player.two.score = player.two.score + 1;
+        $('#console').text('Players Tie Round ' + roundCounter);
+        startRound();
+    } else if (player.one.word.length === 0) {
         player.one.score = player.one.score + 1;
         $('#console').text('Player One Wins Round ' + roundCounter);
         startRound();

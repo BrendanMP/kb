@@ -6,7 +6,7 @@ var words = [
         'Bamanapan',
         'Groindogs',
         'Lorfickle',
-        'Smonmcake',
+        'Smoamcake',
         'Limgistic',
         'Mostaming',
         'Dreamdump',

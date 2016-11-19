@@ -14,16 +14,20 @@ var words = [
         'Dangmurse',
         'Dosmingle'
     ],
+    wordLength = words[0].length,
     wordTotal = words.length,
     playedWords = [],
+    roundCounter = 0,
     player = {
         'one': {
             'word': [],
+            'displayWord': [],
             'progress': 0,
             'score': 0
         },
         'two': {
             'word': [],
+            'displayWord': [],
             'progress': 0,
             'score': 0
         }
@@ -61,13 +65,24 @@ function addWords() {
     player.one.word = words[0].split('');
     player.two.word = words[1].split('');
     playedWords.push(words[0], words[1]);
+    displayWords();
+}
 
+// Add spans and ids to displayed words
+function displayWords() {
+    for (let i = 0; i < wordLength; i++){
+        player.one.displayWord[i] = '<span id="p1-r' + roundCounter + '-c' + (i+1) + '">' + player.one.word[i] + '</span>';
+        player.two.displayWord[i] = '<span id="p2-r' + roundCounter + '-c' + (i+1) + '">' + player.two.word[i] + '</span>';
+    }
     $('#js-p1-wordlist').prepend(
-        '<li><h2>' + player.one.word.join('') + '</h2></li>'
+        '<li><h2>' + player.one.displayWord.join('') + '</h2></li>'
     );
     $('#js-p2-wordlist').prepend(
-        '<li><h2>' + player.two.word.join('') + '</h2></li>'
+        '<li><h2>' + player.two.displayWord.join('') + '</h2></li>'
     );
+}
+
+function displayMatch() {
 }
 
 // Determine who advances.
@@ -94,16 +109,18 @@ function doBattle(input) {
     } else if (input.key === player.one.word[0]) {
         player.one.progress = player.one.progress + 1;
         player.one.word.shift();
+        $('#p1-r' + roundCounter + '-c' + player.one.progress).addClass('input');
         console.log('P1 - Matched', player.one.word)
     } else if (input.key === player.two.word[0]) {
         player.two.progress = player.two.progress + 1;
         player.two.word.shift();
+        $('#p2-r' + roundCounter + '-c' + player.two.progress).addClass('input');
         console.log('P2 - Matched', player.two.word)
     }
     roundWinner();
 }
 
-// Determine round winner.
+// Determine round winner & update scores.
 function roundWinner() {
     if (player.one.word.length === 0) {
         player.one.score = player.one.score + 1;
@@ -121,6 +138,11 @@ function roundWinner() {
 
 // Start a round.
 function startRound() {
+    // Reset player.progress & increment round counter
+    player.one.progress = 0;
+    player.two.progress = 0;
+    roundCounter++;
+    // Check pro
     if (words.length > 0) {
         addWords();
         watchKeys();
@@ -132,7 +154,8 @@ function startRound() {
 
 // Game over.
 function gameOver() {
-    console.log('Game Over!');
+
+    // Check for winner.
     if (player.one.score > player.two.score) {
         console.log('P1 Wins Game');
         $('#console').text('Player One Wins');
@@ -140,9 +163,12 @@ function gameOver() {
         console.log('P2 Wins Game');
         $('#console').text('Player Two Wins');
     }
-    if ( words.length === 0) {
-        words = playedWords;
-    }
+
+    // Reset words & roundcounter.
+    words = playedWords;
+    roundCounter = 0;
+
+    // Start new game.
     startGame();
 }
 

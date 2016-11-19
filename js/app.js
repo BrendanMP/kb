@@ -29,6 +29,19 @@ var words = [
         }
     };
 
+// Fisher Yates Shuffle
+function shuffle(array) {
+    // Shuffle
+    var m = array.length, t, i;
+    while (m) {
+        i = Math.floor(Math.random() * m--);
+        t = array[m];
+        array[m] = array[i];
+        array[i] = t;
+    }
+    return array;
+}
+
 // Watch for key input.
 function watchKeys() {
     $('body').keypress(function (input) {
@@ -44,6 +57,7 @@ function updateScores() {
 
 // Add words to play.
 function addWords() {
+    shuffle(words);
     player.one.word = words[0].split('');
     player.two.word = words[1].split('');
     playedWords.push(words[0], words[1]);

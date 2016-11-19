@@ -80,6 +80,7 @@ function displayWords() {
     $('#js-p2-wordlist').prepend(
         '<li><h2>' + player.two.displayWord.join('') + '</h2></li>'
     );
+    $('h2 span:first-of-type').addClass('active');
 }
 
 // Determine who advances.
@@ -93,29 +94,29 @@ function doBattle(input) {
             player.two.progress = player.two.progress + 1;
             player.one.word.shift();
             player.two.word.shift();
-            $('#p1-r' + roundCounter + '-c' + player.one.progress).addClass('input');
-            $('#p2-r' + roundCounter + '-c' + player.two.progress).addClass('input');
+            $('#p1-r' + roundCounter + '-c' + player.one.progress).addClass('input').removeClass('active').next().addClass('active');
+            $('#p2-r' + roundCounter + '-c' + player.two.progress).addClass('input').removeClass('active').next().addClass('active');
             console.log('P1 & P2 - Matched (Both Advance)', player.one.word, player.two.word);
         } else if (player.one.progress < player.two.progress) {
             player.one.progress = player.one.progress + 1;
             player.one.word.shift();
-            $('#p1-r' + roundCounter + '-c' + player.one.progress).addClass('input');
+            $('#p1-r' + roundCounter + '-c' + player.one.progress).addClass('input').removeClass('active').next().addClass('active');
             console.log('P1 & P2 - Matched (Player 1 Advances)', player.one.word, player.two.word);
         } else if (player.two.progress < player.one.progress){
             player.two.progress = player.two.progress + 1;
             player.two.word.shift();
-            $('#p2-r' + roundCounter + '-c' + player.two.progress).addClass('input');
+            $('#p2-r' + roundCounter + '-c' + player.two.progress).addClass('input').removeClass('active').next().addClass('active');
             console.log('P1 & P2 - Matched (Player 2 Advances)', player.two.word, player.two.word);
         }
     } else if (input.key === player.one.word[0]) {
         player.one.progress = player.one.progress + 1;
         player.one.word.shift();
-        $('#p1-r' + roundCounter + '-c' + player.one.progress).addClass('input');
+        $('#p1-r' + roundCounter + '-c' + player.one.progress).addClass('input').removeClass('active').next().addClass('active');
         console.log('P1 - Matched', player.one.word)
     } else if (input.key === player.two.word[0]) {
         player.two.progress = player.two.progress + 1;
         player.two.word.shift();
-        $('#p2-r' + roundCounter + '-c' + player.two.progress).addClass('input');
+        $('#p2-r' + roundCounter + '-c' + player.two.progress).addClass('input').removeClass('active').next().addClass('active');
         console.log('P2 - Matched', player.two.word)
     }
     roundWinner();
@@ -142,11 +143,16 @@ function roundWinner() {
 
 // Start a round.
 function startRound() {
-    // Reset player.progress & increment round counter
+
+    // Reset player.progress & increment round counter.
     player.one.progress = 0;
     player.two.progress = 0;
     roundCounter++;
-    // Check pro
+
+    // Remove active letter
+
+
+    // Check progress.
     if (words.length > 0) {
         addWords();
         watchKeys();

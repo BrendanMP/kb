@@ -80,6 +80,7 @@ section {
   li {
     animation: enter-title 200ms ease-in-out forwards;
     h2 {
+      line-height: 1.5;
       font-size: 5.5vw;
       margin: 1rem 0;
       color: rgba(black, 0.1);
@@ -89,15 +90,17 @@ section {
     }
     span.input {
       color: rgba(black,0.4);
+      box-shadow: inset 0 -4px 0 rgba(black, 0.4);
     }
 
     &:first-of-type {
       span.active {
-        color: rgba(black, 0.5);
+        color: rgba(black, 0.1);
         animation: blink 600ms infinite;
       }
       span.input {
         color: rgba(black,0.5);
+        box-shadow: inset 0 -4px 0 rgba(white, 0.0);
       }
     }
   }
@@ -123,15 +126,19 @@ section {
 @keyframes blink {
   0% {
     color: rgba(white, 0.75);
+    box-shadow: inset 0 -4px 0 rgba(white, 0.75);
   }
   50% {
     color: rgba(white, 0.75);
+    box-shadow: inset 0 -4px 0 rgba(white, 0.75);
   }
-  51% {
+  50.001% {
     color: rgba(black, 0.1);
+    box-shadow: inset 0 -4px 0 rgba(white, 0.0);
   }
   100% {
     color: rgba(black, 0.1);
+    box-shadow: inset 0 -4px 0 rgba(white, 0.0);
   }
 }
 

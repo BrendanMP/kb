@@ -8,9 +8,9 @@ Keyboard Battle (kb) is a two player party game played on the same keyboard. The
   * The game is over when the word list is exhausted.
 
 ## Work in Progress... 
-["Playable Here"](https://brendanmp.github.io/kb/)
+[Playable Here](https://brendanmp.github.io/kb/)
 
 ### To Do
-  * Add styling to the active and input characters.
-  * Instruction Screen
+  * Add styling to the active characters.
+  * Instructions Screen
   * Improve UI (Launch screen, etc.)

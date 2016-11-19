@@ -10,6 +10,8 @@ Keyboard Battle (kb) is a two player party game played on the same keyboard. The
 ## Work in Progress... 
 [Playable Here](https://brendanmp.github.io/kb/)
 
+---
+
 ### To Do
   * Add styling to the active characters.
   * Instructions Screen

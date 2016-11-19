@@ -71,7 +71,7 @@ section {
       display: inline-block; }
     .word-list li span.input {
       color: rgba(0, 0, 0, 0.4);
-      box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.4); }
+      box-shadow: inset 0 -0.4vw 0 rgba(0, 0, 0, 0.4); }
     .word-list li:first-of-type span.active {
       color: rgba(0, 0, 0, 0.1);
       animation: blink 600ms infinite; }

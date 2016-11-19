@@ -128,13 +128,11 @@ function doBattle(input) {
 function roundWinner() {
     if (player.one.word.length === 0) {
         player.one.score = player.one.score + 1;
-        $('#console').text('Player One Wins Round');
-        console.log('P1 - Wins Round');
+        $('#console').text('Player One Wins Round ' + roundCounter);
         startRound();
     } else if (player.two.word.length === 0) {
         player.two.score = player.two.score + 1;
-        $('#console').text('Player Two Wins Round');
-        console.log('P2 - Wins Round');
+        $('#console').text('Player Two Wins Round ' + roundCounter);
         startRound();
     }
     updateScores();

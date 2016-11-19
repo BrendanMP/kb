@@ -14,7 +14,3 @@ Keyboard Battle (kb) is a two player party game played on the same keyboard. The
   * Add styling to the active characters.
   * Instructions Screen
   * Improve UI (Launch screen, etc.)
-
-### Bugs
-  * Need to add tie round logic.
-  * Find the culprit for occasionally adding two letters to the player not in the lead. This only happens if the two next characters are the same. Case: 'Smoomcake' v 'Groindogs'. If P2 is entering the second 'o' in Groindogs and P1's active letter is the first 'o' in Smoomcake, P1 semes to recieve both 'o's.

@@ -1,5 +1,5 @@
-# Keyboard Battle 
-Keyboard Battle (kb) is a two player party game played on the same keyboard. The winner of a round KB is the player who's word is successfully entered first.
+# ShiftLock
+ShiftLock is a two player party game played on the same keyboard. The winner of a round ShiftLock is the player who's word is successfully entered first.
 
 [Playable Here](https://brendanmp.github.io/kb/)
 

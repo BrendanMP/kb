@@ -188,7 +188,8 @@ section {
         background: tomato; }
   .messages #menu-control-label {
     text-align: right;
-    padding-right: 0; }
+    padding-right: 0;
+    padding-left: 0; }
     .messages #menu-control-label:before {
       display: block;
       text-align: right;

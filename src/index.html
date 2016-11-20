@@ -10,7 +10,29 @@
 </head>
 <body>
 <div class="messages">
-    <marquee behavior="alternate" direction="right"  id="console"><b>Keyboard Battle</b> - Input is case sensitive</marquee>
+    <div class="menu-item" id="js-new-game">New Game</div>
+    <div class="menu-marquee">
+        <marquee behavior="alternate" direction="right"  id="console"><b>Keyboard Battle</b> - Input is case sensitive</marquee>
+    </div>
+    <div class="menu-item">
+        <input type="checkbox" id="menu-control">
+        <label for="menu-control" id="menu-control-label"></label>
+        <div class="instructions">
+
+            <div class="container">
+                <h1>Keyboard Battle</h1>
+                <p>Keyboard Battle is a two player party game played on the same keyboard. The winner of a round KB is the player who's word is successfully entered first.</p>
+                <h3>Rules</h3>
+                <ul>
+                    <li>Player must complete their given word before the other player.</li>
+                    <li>If the same letter is active and share the same index value both players advance on key input.</li>
+                    <li>If the same letter is active and a player has more matched characters in their current word, the player with fewer matched characters receives that letter.</li>
+                    <li>The game is over when the word list is exhausted.</li>
+                </ul>
+                <label for="menu-control">Close Menu</label>
+            </div>
+        </div>
+    </div>
 </div>
 <main id="js-game">
     <input type="text" id="js-input" autofocus/>

@@ -193,7 +193,7 @@ section {
   .messages #menu-control:checked ~ .instructions {
     height: calc(100vh - 3rem); }
     .messages #menu-control:checked ~ .instructions .container {
-      animation: menu-enter 400ms ease 600ms forwards;
+      animation: menu-enter 400ms ease 400ms forwards;
       opacity: 0; }
   .messages #menu-control:checked ~ #menu-control-label:before {
     content: 'Close Menu'; }

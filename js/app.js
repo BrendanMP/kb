@@ -196,6 +196,13 @@ function startGame() {
     startRound();
 }
 
+function newGame() {
+    words.concat(playedWords);
+    startGame();
+}
+
+$('#js-new-game').click(newGame);
+
 // Ready the DOM for BATTLE.
 $(document).ready(function () {
     // Start game.

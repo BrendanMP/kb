@@ -122,9 +122,8 @@ section {
   color: #333;
   font-size: .75rem; }
   .messages .menu-item, .messages label {
-    text-transform: uppercase;
+    min-width: 10em;
     font-weight: bold;
-    letter-spacing: 0.1em;
     display: block;
     flex: 0 1 auto;
     padding: 0 0.5rem;
@@ -135,9 +134,13 @@ section {
       line-height: 2rem;
       color: tomato; }
   .messages .menu-marquee {
+    text-align: center;
     padding: 0 0.5rem;
     flex: 2 1 auto; }
   .messages #console {
+    max-width: 30rem;
+    margin: 0 auto;
+    font-weight: bold;
     flex: 1 1 auto; }
   .messages input[type=checkbox] {
     display: none; }
@@ -150,9 +153,9 @@ section {
     width: 100%;
     height: 0;
     left: 0;
-    background: #000;
+    background: rgba(0, 0, 0, 0.7);
     color: #fff;
-    transition: all 600ms ease; }
+    transition: all 300ms ease; }
     .messages .instructions .container {
       margin: 0 auto;
       max-width: 42em;
@@ -175,14 +178,17 @@ section {
       display: inline-block;
       padding: 1em 1.5em;
       margin: 2em 0 0;
-      background: white;
-      color: #000;
+      background: transparent;
+      color: #fff;
+      box-shadow: inset 0 0 0 3px #fff;
       line-height: 1; }
       .messages .instructions label:hover {
-        color: #fff;
+        box-shadow: inset 0 0 0 3px tomato;
         background: tomato; }
-  .messages #menu-control-label:before {
-    content: 'Menu'; }
+  .messages #menu-control-label {
+    text-align: right; }
+    .messages #menu-control-label:before {
+      content: 'Menu'; }
   .messages #menu-control:checked ~ .instructions {
     height: calc(100vh - 2rem); }
     .messages #menu-control:checked ~ .instructions .container {

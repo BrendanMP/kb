@@ -18,7 +18,7 @@ h5 {
 }
 
 main {
-  height: calc(100vh - 3rem);
+  min-height: calc(100vh - 3rem);
   display: flex;
   flex-flow: row wrap;
 }

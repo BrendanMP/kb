@@ -218,6 +218,7 @@ section {
   #menu-control-label {
     text-align: right;
     &:before {
+      display: block;
       content: 'Menu';
     }
   }

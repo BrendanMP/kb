@@ -189,6 +189,7 @@ section {
   .messages #menu-control-label {
     text-align: right; }
     .messages #menu-control-label:before {
+      display: block;
       content: 'Menu'; }
   .messages #menu-control:checked ~ .instructions {
     height: calc(100vh - 3rem); }

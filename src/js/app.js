@@ -46,9 +46,14 @@ function shuffle(array) {
     return array;
 }
 
-// Watch for key input.
+// Watch for key input, ignore spacebar.
 function watchKeys() {
+
     $('body').keypress(function (input) {
+        if (input.keyCode == 32) {
+            input.preventDefault();
+            return false;
+        }
         doBattle(input);
     });
 }

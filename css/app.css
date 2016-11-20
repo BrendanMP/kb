@@ -10,7 +10,7 @@ h5 {
   font-family: "Roboto Condensed", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif; }
 
 main {
-  height: calc(100vh - 3rem);
+  min-height: calc(100vh - 3rem);
   display: flex;
   flex-flow: row wrap; }
 

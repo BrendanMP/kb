@@ -218,6 +218,7 @@ section {
   #menu-control-label {
     text-align: right;
     &:before {
+      display: block;
       content: 'Menu';
     }
   }
@@ -225,7 +226,7 @@ section {
     ~ .instructions {
       height: calc(100vh - 3rem);
       .container {
-        animation: menu-enter 400ms ease 600ms forwards;
+        animation: menu-enter 400ms ease 400ms forwards;
         opacity: 0;
       }
     }

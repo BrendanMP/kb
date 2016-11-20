@@ -187,7 +187,7 @@ function gameOver() {
 
 // Start the game.
 function startGame() {
-
+    
     // Init Scores
     player.one.score = 0;
     player.two.score = 0;
@@ -202,6 +202,7 @@ function startGame() {
 }
 
 function newGame() {
+    $('#console').text('Welcome to ShiftLock');
     words.concat(playedWords);
     startGame();
 }

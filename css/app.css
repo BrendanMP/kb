@@ -189,11 +189,12 @@ section {
   .messages #menu-control-label {
     text-align: right; }
     .messages #menu-control-label:before {
+      display: block;
       content: 'Menu'; }
   .messages #menu-control:checked ~ .instructions {
     height: calc(100vh - 3rem); }
     .messages #menu-control:checked ~ .instructions .container {
-      animation: menu-enter 400ms ease 600ms forwards;
+      animation: menu-enter 400ms ease 400ms forwards;
       opacity: 0; }
   .messages #menu-control:checked ~ #menu-control-label:before {
     content: 'Close Menu'; }

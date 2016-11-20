@@ -18,7 +18,7 @@ h5 {
 }
 
 main {
-  min-height: calc(100vh - 2rem);
+  height: calc(100vh - 3rem);
   display: flex;
   flex-flow: row wrap;
 }
@@ -131,17 +131,17 @@ section {
   align-items: center;
   justify-content: center;
   width:100%;
-  min-height: 2rem;
+  min-height: 3rem;
   flex-grow: 0;
   background: #fff;
   color: #333;
-  font-size: .75rem;
+  font-size: 18px;
   .menu-item, label {
     min-width: 10em;
     font-weight: bold;
     display: block;
     flex: 0 1 auto;
-    padding: 0 0.5rem;
+    padding: 0 1rem;
     cursor: pointer;
     line-height: 2rem;
     transition: all 100ms ease;
@@ -172,6 +172,7 @@ section {
     overflow: hidden;
     width: 100%;
     height: 0;
+    top: 3rem;
     left: 0;
     background: rgba(black, 0.7);
     color: #fff;
@@ -222,7 +223,7 @@ section {
   }
   #menu-control:checked {
     ~ .instructions {
-      height: calc(100vh - 2rem);
+      height: calc(100vh - 3rem);
       .container {
         animation: menu-enter 400ms ease 600ms forwards;
         opacity: 0;

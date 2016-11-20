@@ -1,18 +1,18 @@
 var words = [
-        'Doxickeys',
-        'Pseghting',
-        'Moqnuqeck',
-        'Poncicles',
-        'Bamanapan',
-        'Groindogs',
-        'Lorfickle',
-        'Smoamcake',
-        'Limgistic',
-        'Mostaming',
-        'Dreamdump',
-        'Miltmirks',
-        'Dangmurse',
-        'Momingles'
+        'DoxIckEys',
+        'PsEghTinG',
+        'MoQnuQeck',
+        'PonCiCleS',
+        'BamAnaPAn',
+        'GroinDoGs',
+        'LorfiCKle',
+        'SmoAMcake',
+        'LiMGisTIc',
+        'MOsTamOng',
+        'DreAMduMP',
+        'MiltMirKs',
+        'DanGmurSe',
+        'MoMinGleS'
     ],
     wordLength = words[0].length,
     wordTotal = words.length,
@@ -187,7 +187,7 @@ function gameOver() {
 
 // Start the game.
 function startGame() {
-    
+
     // Init Scores
     player.one.score = 0;
     player.two.score = 0;

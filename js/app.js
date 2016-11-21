@@ -46,15 +46,17 @@ function shuffle(array) {
     return array;
 }
 
-// Watch for key input, ignore spacebar.
+// Watch for key input, ignore spacebar & pause for Caps Lock.
 function watchKeys() {
-
     $('body').keypress(function (input) {
-        if (input.keyCode == 32) {
+        if (event.getModifierState("CapsLock") === true) {
+            $('#console').text('CAPS LOCK ON, GAME PAUSED');
+        } else if (input.keyCode == 32) {
             input.preventDefault();
             return false;
+        } else {
+            doBattle(input);
         }
-        doBattle(input);
     });
 }
 

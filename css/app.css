@@ -3,6 +3,11 @@
   margin: 0;
   padding: 0; }
 
+::selection {
+  background: transparent;
+  /* WebKit/Blink Browsers */
+  color: #fff; }
+
 body {
   font-family: "Space Mono", monospace; }
 
@@ -201,6 +206,10 @@ section {
       opacity: 0; }
   .messages #menu-control:checked ~ #menu-control-label:before {
     content: 'Close Menu'; }
+  .messages ::selection {
+    background: transparent;
+    /* WebKit/Blink Browsers */
+    color: #000; }
 
 @keyframes blink {
   0% {

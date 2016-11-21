@@ -9,6 +9,11 @@ $header-font-family: 'Roboto Condensed', $helvetica;
   padding: 0;
 }
 
+::selection {
+  background: rgba(black,0); /* WebKit/Blink Browsers */
+  color: #fff;
+}
+
 body {
   font-family: $base-font-family;
 }
@@ -238,6 +243,10 @@ section {
         content: 'Close Menu';
       }
     }
+  }
+  ::selection {
+    background: rgba(black,0); /* WebKit/Blink Browsers */
+    color: #000;
   }
 }
 

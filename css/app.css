@@ -153,6 +153,8 @@ section {
   .messages input[type=checkbox] {
     display: none; }
   .messages .instructions {
+    font-family: "Space Mono", monospace;
+    text-transform: none;
     display: flex;
     align-items: center;
     z-index: 10;
@@ -184,6 +186,7 @@ section {
     .messages .instructions ul li {
       margin: 1em 0; }
     .messages .instructions label {
+      text-align: center;
       display: inline-block;
       padding: 1em 1.5em;
       margin: 2em 0 0;

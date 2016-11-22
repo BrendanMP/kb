@@ -203,16 +203,18 @@ function startGame() {
     startRound();
 }
 
+// Start a new game.
 function newGame() {
     $('#console').text('Welcome to ShiftLock');
     words.concat(playedWords);
     startGame();
 }
 
+// New game click handler.
 $('#js-new-game').click(newGame);
 
 // Ready the DOM for BATTLE.
 $(document).ready(function () {
-    // Start game.
+    // Start game on load.
     startGame();
 });

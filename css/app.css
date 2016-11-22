@@ -127,6 +127,9 @@ section {
   color: #333;
   font-size: 18px; }
   .messages .menu-item, .messages label {
+    font-family: "Roboto Condensed", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     min-width: 10em;
     font-weight: bold;
     display: block;

@@ -39,17 +39,6 @@ gulp.task('scripts', () => {
         .pipe(gulp.dest('./js'))
 });
 
-gulp.task('compress', function (cb) {
-    pump([
-            gulp.src('js/*.js'),
-            rename('app.min.js'),
-            uglify(),
-            gulp.dest('js')
-        ],
-        cb
-    );
-});
-
 gulp.task('html', () => {
     return gulp.src(['./src/**/*.html'])
         .pipe(gulp.dest('./'));

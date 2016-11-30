@@ -1,9 +1,12 @@
 var gulp = require('gulp'),
     util = require('gulp-util'),
+    pump = require('pump'),
     sass = require('gulp-sass'),
     path = require('path'),
     browserSync = require('browser-sync'),
-    rename = require("gulp-rename"),
+    rename = require('gulp-rename'),
+    concat = require('gulp-concat'),
+    uglify = require('gulp-uglify'),
     environments = require('gulp-environments'),
     // Production
     cleanCSS = require('gulp-clean-css');
@@ -30,8 +33,21 @@ gulp.task('sass', () => {
 
 gulp.task('scripts', () => {
     return gulp.src(['./src/js/*.js'])
+        .pipe(gulp.dest('./js'))
+        .pipe(uglify())
+        .pipe(rename('app.min.js'))
+        .pipe(gulp.dest('./js'))
+});
 
-        .pipe(gulp.dest('js/'));
+gulp.task('compress', function (cb) {
+    pump([
+            gulp.src('js/*.js'),
+            rename('app.min.js'),
+            uglify(),
+            gulp.dest('js')
+        ],
+        cb
+    );
 });
 
 gulp.task('html', () => {
@@ -51,5 +67,5 @@ gulp.task('serve', ['sass','scripts','html'], () => {
     gulp.watch('./css/*.css').on('change', browserSync.reload);
 });
 
-gulp.task('default', ['serve']);
+gulp.task('default', ['serve',]);
 

@@ -77,7 +77,7 @@ function addWords() {
 
 // Add spans and ids to displayed words
 function displayWords() {
-    for (let i = 0; i < wordLength; i++){
+    for (var i = 0; i < wordLength; i++){
         player.one.displayWord[i] = '<span id="p1-r' + roundCounter + '-c' + (i+1) + '">' + player.one.word[i] + '</span>';
         player.two.displayWord[i] = '<span id="p2-r' + roundCounter + '-c' + (i+1) + '">' + player.two.word[i] + '</span>';
     }
